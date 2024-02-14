@@ -18,7 +18,8 @@ $(".btn").click(function(){
     // 4. Add the contents of the variable userChosenColour created in step 2 to the end of this new userClickedPattern
     userClickedPattern.push(userChosenColour);
 
-     console.log(userClickedPattern);
+    //  console.log(userClickedPattern);
+    playSound(userChosenColour);
 
 });
 
@@ -46,8 +47,9 @@ function nextSequence() {
 //   //3. Use Google/Stackoverflow to figure out how you can use Javascript to play the sound for the button colour selected in step 1.
 //   var audio = new Audio("sounds/" + randomChosenColour + ".mp3");
 //   audio.play();
-playSound(randomChosenColour);
+  playSound(randomChosenColour);
 
+  //--STEP 5 add sounds to button click
 }
 
 function playSound(name){
