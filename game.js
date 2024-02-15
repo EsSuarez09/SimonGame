@@ -21,6 +21,8 @@ $(".btn").click(function(){
     //  console.log(userClickedPattern);
     playSound(userChosenColour);
 
+    animatePress(userChosenColour);
+
 });
 
 //1. Inside game.js create a new function called nextSequence()
@@ -55,6 +57,17 @@ function nextSequence() {
 function playSound(name){
     var audio = new Audio("sounds/" + name + ".mp3");
     audio.play();
+}
+
+
+//--STEP 6--
+//1. Create a new function called animatePress(), it should take a single input parameter called currentColour.
+function animatePress(currentColor){
+  $("#" + currentColor).addClass("pressed");
+
+  setTimeout(function(){
+    $("#" + currentColor).removeClass("pressed");
+  }, 100);
 }
 
 
