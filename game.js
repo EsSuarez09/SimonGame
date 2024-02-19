@@ -68,6 +68,7 @@ console.log("Wrong");
 //1. In the sounds folder, there is a sound called wrong.mp3, play this sound if the user got one of the answers wrong.
 playSound("wrong");
 
+
 //2. In the styles.css file, there is a class called "game-over", apply this class to the body of the website when the user gets one of the answers wrong and then remove it after 200 milliseconds.
 $("body").addClass("game-over");
   setTimeout(function(){
@@ -77,10 +78,14 @@ $("body").addClass("game-over");
 //3. Change the h1 title to say "Game Over, Press Any Key to Restart" if the user got the answer wrong.
 $("#level-title").text("Game Over, Press Any Key to Restart");
 
-}
+//--STEP 10
+//2. Call startOver() if the user gets the sequence wrong.
+startOver();
+
 
 }
 
+}
 
 
 //1. Inside game.js create a new function called nextSequence()
@@ -136,6 +141,16 @@ function animatePress(currentColor){
   setTimeout(function(){
     $("#" + currentColor).removeClass("pressed");
   }, 100);
+}
+
+//--STEP 10
+//1. Create a new function called startOver().
+function startOver(){
+
+  //3. Inside this function, you'll need to reset the values of level, gamePattern and started variables.
+  level = 0;
+  gamePattern = [];
+  started = false;
 }
 
 
